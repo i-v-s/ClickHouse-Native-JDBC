@@ -46,7 +46,7 @@ public class ClickHouseDefines {
 
     // MAX_BLOCK_BYTES does not work
     public static int MAX_BLOCK_BYTES = 10 * 1024 * 1024;
-    public static int COLUMN_BUFFER_BYTES = 1024 * 1024;
+    public static int COLUMN_BUFFER_BYTES = 32 * 1024;
 
     public static int DATA_TYPE_CACHE_SIZE = 1024;
 }
