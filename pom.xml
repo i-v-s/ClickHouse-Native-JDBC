@@ -17,7 +17,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.housepower</groupId>
+    <groupId>org.clojars.i-s</groupId>
     <artifactId>clickhouse-native-jdbc-parent</artifactId>
     <version>2.7.0-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -68,10 +68,10 @@
     </modules>
 
     <properties>
-        <deploy.repo.snapshots.id>sonatype-nexus-snapshots</deploy.repo.snapshots.id>
-        <deploy.repo.snapshots.url>https://oss.sonatype.org/content/repositories/snapshots</deploy.repo.snapshots.url>
-        <deploy.repo.release.id>sonatype-nexus-staging</deploy.repo.release.id>
-        <deploy.repo.release.url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</deploy.repo.release.url>
+        <deploy.repo.snapshots.id>clojars</deploy.repo.snapshots.id>
+        <deploy.repo.snapshots.url>https://repo.clojars.org</deploy.repo.snapshots.url>
+        <deploy.repo.release.id>clojars</deploy.repo.release.id>
+        <deploy.repo.release.url>https://repo.clojars.org</deploy.repo.release.url>
 
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -137,33 +137,33 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.github.housepower</groupId>
+                <groupId>org.clojars.i-s</groupId>
                 <artifactId>clickhouse-integration</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.housepower</groupId>
+                <groupId>org.clojars.i-s</groupId>
                 <artifactId>clickhouse-integration-spark_${scala.binary.version}</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.housepower</groupId>
+                <groupId>org.clojars.i-s</groupId>
                 <artifactId>clickhouse-native-jdbc</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.housepower</groupId>
+                <groupId>org.clojars.i-s</groupId>
                 <artifactId>clickhouse-native-jdbc</artifactId>
                 <type>test-jar</type>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.housepower</groupId>
+                <groupId>org.clojars.i-s</groupId>
                 <artifactId>clickhouse-native-jdbc-shaded</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.housepower</groupId>
+                <groupId>org.clojars.i-s</groupId>
                 <artifactId>examples</artifactId>
                 <version>${project.version}</version>
             </dependency>
@@ -401,6 +401,7 @@
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>${maven.surefire.plugin.version}</version>
                     <configuration>
+                        <skipTests>true</skipTests>
                         <excludes>
                             <exclude>**/*ITest*</exclude>
                         </excludes>
@@ -530,6 +531,9 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skipTests>true</skipTests>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

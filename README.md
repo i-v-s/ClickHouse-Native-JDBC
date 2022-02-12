@@ -1,4 +1,9 @@
 ClickHouse Native JDBC
+
+## WARNING
+
+This repository was forked to reduce memory consumption of prepared insert statements on very wide tables. COLUMN_BUFFER_BYTES constant reduced from 1024 * 1024 to 64 * 1024.
+
 ===
 
 [![Build Status](https://github.com/housepower/ClickHouse-Native-JDBC/workflows/build/badge.svg?branch=master)](https://github.com/housepower/ClickHouse-Native-JDBC/actions?query=workflow%3Abuild+branch%3Amaster)

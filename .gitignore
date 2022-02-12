@@ -4,6 +4,7 @@
 .classpath
 .project
 .idea/
+.vscode/
 target/
 dependency-reduced-pom.xml
 node_modules/
